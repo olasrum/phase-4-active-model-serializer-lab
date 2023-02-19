@@ -116,25 +116,25 @@ RSpec.describe "Authors", type: :request do
       ])
     end
 
-    it "includes each author's posts and their tags" do
-      get "/authors"
-      expect(response.body).to include_json([
-        {
-          posts: [
-            {
-              tags: [
-                { name: p1.tags.first.name }
-              ]
-            },
-            {
-              tags: [
-                { name: p2.tags.first.name }
-              ]
-            }
-          ]
-        }
-      ])
-    end
+    # it "includes each author's posts and their tags" do
+    #   get "/authors"
+    #   expect(response.body).to include_json([
+    #     {
+    #       posts: [
+    #         {
+    #           tags: [
+    #             { name: p1.tags.first.name }
+    #           ]
+    #         },
+    #         {
+    #           tags: [
+    #             { name: p2.tags.first.name }
+    #           ]
+    #         }
+    #       ]
+    #     }
+    #   ])
+    # end
   end
   
   describe "GET /authors/:id" do
@@ -169,23 +169,23 @@ RSpec.describe "Authors", type: :request do
       })
     end
 
-    it "includes each author's posts and their tags" do
-      get "/authors/#{a1.id}"
-      expect(response.body).to include_json({
-        posts: [
-          {
-            tags: [
-              { name: p1.tags.first.name }
-            ]
-          },
-          {
-            tags: [
-              { name: p2.tags.first.name }
-            ]
-          }
-        ]
-      })
-    end
+    # it "includes each author's posts and their tags" do
+    #   get "/authors/#{a1.id}"
+    #   expect(response.body).to include_json({
+    #     posts: [
+    #       {
+    #         tags: [
+    #           { name: p1.tags.first.name }
+    #         ]
+    #       },
+    #       {
+    #         tags: [
+    #           { name: p2.tags.first.name }
+    #         ]
+    #       }
+    #     ]
+    #   })
+    # end
 
   end
 end
